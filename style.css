@@ -1,7 +1,6 @@
 
 
 
-                
 header{
     background: url(Fondos/ash-banner.jpg);
     padding: 20px 0;
@@ -209,10 +208,10 @@ article img:first-child{
     height: 380px;
 }
 
-article img:last-child{
+article img:nth-child(2){
     position: absolute;
     height: 180px;
-    width: 200px;
+    width: 180px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -220,6 +219,20 @@ article img:last-child{
     transform: translateY(25%);
     transition: .3s ease;
     opacity: 0;
+
+}
+article img:last-child{
+    position: absolute;
+    height: 390px;
+    width: 250px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotateY(180deg);
+    transition: 0.4s ease;
+    opacity: 0;
+    border-radius: 7px;
 
 }
 
@@ -243,14 +256,36 @@ article::before{
     );
     opacity: 0;
     transition: all .3s ease;
+    border-radius: 7px;
 }
 
 article:hover::before{
     opacity: 1;
 }
-article:hover img:last-child{
+article:hover img:nth-child(2){
     opacity: 1;
     transform: translateY(10%);
+    
+}
+
+
+article:active img:last-child{
+    opacity: 1;
+    transform: rotateY(0deg);
+    transform: perspective(120px) ;
+    
+
+}
+article:active img:first-child{
+    visibility: hidden;
+    transition: 0ms;
+    box-shadow: none;
+    background-image: none;
+}
+article:active img:nth-child(2){
+    visibility: hidden;
+    transition: 0ms;
+    box-shadow: none;
 }
 
 footer img{
